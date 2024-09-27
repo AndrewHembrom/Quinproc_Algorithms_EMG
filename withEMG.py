@@ -126,8 +126,8 @@ if(startRecording == 'y'):
     yf_prev = fft(y)
     xf_prev = fftfreq(N, T)[:N//2]
 
-    lpf_y = butter_lowpass_filter(y, 5, 7, 8000)
-    bpf_y = butter_highpass_filter(lpf_y, 1.5, 7, 8000)
+    lpf_y = butter_lowpass_filter(y, 110, 7, 8000)
+    bpf_y = butter_highpass_filter(lpf_y, 20, 7, 8000)
 
     bpf_y = [10*i for i in bpf_y]
     bpf_y = np.array(bpf_y)
